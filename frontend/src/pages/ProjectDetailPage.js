@@ -511,18 +511,18 @@ const restoreHistory = async (historyId) => {
 
                   {/* Restore button — only manager, only not on latest entry */}
                   {canManage && (
-                    <td>
-                      {index !== 0 && !h.changeType?.startsWith('Before Restore') && (
-                        <button
-                          className="btn btn-warning btn-sm"
-                          onClick={() => restoreHistory(h.id)}
-                          style={{ fontSize: 11, whiteSpace: 'nowrap' }}
-                        >
-                          ↩ Restore
-                        </button>
-                      )}
-                    </td>
-                  )}
+                  <td>
+                    {!h.changeType?.startsWith('Before Restore') && (
+                      <button
+                        className="btn btn-warning btn-sm"
+                        onClick={() => restoreHistory(h.id)}
+                        style={{ fontSize: 11, whiteSpace: 'nowrap' }}
+                      >
+                        ↩ Restore
+                      </button>
+                    )}
+                  </td>
+                )}
 
                 </tr>
               ))}
